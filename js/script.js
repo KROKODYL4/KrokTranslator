@@ -50,17 +50,19 @@ translateBtn.addEventListener("click", () => {
       toText.setAttribute("placeholder", "Translation");
     });
 });
-icons.forEach((icon) => {
-  icon.addEventListener("click", ({ target }) => {
-    if (!fromText.value || !toText.value) return;
-    if (target.classList.contains("fa-copy")) {
-      navigator.clipboard.writeText(toText.value);
-      alert("Copied!");
-    } else {
-      let utterance;
-      utterance = new SpeechSynthesisUtterance(toText.value);
-      utterance.lang = selectTag[1].value;
-    }
-    speechSynthesis.speak(utterance);
-  });
-});
+
+// WORK IN PROGRESS
+// icons.forEach((icon) =&gt; {
+  //  icon.addEventListener("click", ({ target }) =&gt; {
+  //    if (!fromText.value || !toText.value) return;
+  //    if (target.classList.contains("fa-copy")) {
+  //      navigator.clipboard.writeText(toText.value);
+  //      alert("Copied!");
+  //    } else {
+  //      let utterance;
+  //      utterance = new SpeechSynthesisUtterance(toText.value);
+  //      utterance.lang = selectTag[1].value;
+  //    }
+  //    speechSynthesis.speak(utterance);
+  //  });
+  //});
